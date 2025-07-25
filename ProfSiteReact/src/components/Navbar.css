@@ -1,18 +1,36 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #e3f0fc;
+    justify-content: space-between; /* Logo left, links right */
+    align-items: center; /* Vertically center everything */
+    height: 120px;
+    padding: 0 32px;
+    width: 100%;
+    background: #ffffff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
+
+header {
+    padding-top: 120px; /* Prevent content from being hidden under the fixed navbar */
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #1976d2;
+    display: flex;
+    align-items: center; /* Ensures logo text/image is centered */
 }
+
+.logo img {
+    height: 60px; /* If using an image logo */
+    width: auto;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -20,12 +38,83 @@
     margin: 0;
     padding: 0;
 }
+
 .nav-links a {
     text-decoration: none;
-    color: #1976d2;
+    color: #000;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
 }
+
 .nav-links a:hover {
-    color: #0d47a1;
-} 
+    color: #1976d2;
+    border-bottom: 2px solid #1976d2;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger span {
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+/* Mobile menu (hidden by default) */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
