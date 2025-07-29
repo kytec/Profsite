@@ -7,41 +7,79 @@
   justify-content: center;
   overflow: hidden;
 }
-.hero-bg-placeholder {
+.hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: #e3f0fc;
-  /* Replace with background-image: url('...') when ready */
+  background: url('/images/hero-bg.jpg') center/cover no-repeat;
   z-index: 1;
 }
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(25, 118, 210, 0.25);
+  background: #95c0f1;
   z-index: 2;
 }
 .hero-content {
   position: relative;
   z-index: 3;
   text-align: center;
-  color: #18306b;
+  color: #fff;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+.hero-logo {
+  height: 64px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 18px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
 }
 .hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: #000000;
 }
 .hero-subtitle {
-  font-size: 2rem;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+.hero-cta-btn {
+  background: #fff;
+  color: #000000;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #1976d2;
-  margin-bottom: 1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-top: 0.5rem;
+}
+.hero-cta-btn:hover {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeInHero 1.2s ease 0.2s forwards;
+}
+@keyframes fadeInHero {
+  to { opacity: 1; }
 }
 @media (max-width: 700px) {
-  .hero-title { font-size: 2rem; }
-  .hero-subtitle { font-size: 1.2rem; }
+  .hero-title { font-size: 1.6rem; }
+  .hero-logo { height: 40px; }
+  .hero-content { min-height: 40vh; }
 }
 /* Card overlay for next section (WhyChooseUs/Services) */
 #services {

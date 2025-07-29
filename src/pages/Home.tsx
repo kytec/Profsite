@@ -7,6 +7,7 @@ import ContactForm from '../components/ContactForm';
 const Home = () => (
   <>
     <Hero />
+    <WhyChooseUs />
     <About />
     <Stats />
     <section id="contact" className="contact-section">
@@ -15,7 +16,6 @@ const Home = () => (
         <ContactForm />
       </div>
     </section>
-    <WhyChooseUs />
   </>
 );
 

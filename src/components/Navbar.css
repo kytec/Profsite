@@ -27,8 +27,19 @@ header {
 }
 
 .logo img {
-    height: 60px; /* If using an image logo */
+    height: 100px; /* If using an image logo */
     width: auto;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 700px) {
+  .logo-img {
+    height: 120px;
+  }
 }
 
 .nav-links {

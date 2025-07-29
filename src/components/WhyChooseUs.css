@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: -80px;
+  margin-top: 0px;
   z-index: 4;
   position: relative;
 }
@@ -21,7 +21,7 @@
 .why-choose-us h2 {
   font-size: 2rem;
   font-weight: 800;
-  color: #18306b;
+  color:  #000000;
   margin-bottom: 2rem;
 }
 .features {
@@ -32,7 +32,7 @@
   flex-wrap: wrap;
 }
 .feature {
-  background: #fff;
+  background: #95c0f1;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
   padding: 2rem 1.5rem;
@@ -52,7 +52,7 @@
 .feature h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #18306b;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 .feature p {
@@ -65,6 +65,6 @@
     align-items: center;
   }
   #services {
-    margin-top: 0;
+    margin-top: 0px;
   }
 } 
