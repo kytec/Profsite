@@ -5,8 +5,9 @@
     height: 120px;
     padding: 0 32px;
     width: 100%;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -32,13 +33,16 @@ header {
 }
 
 .logo-img {
-  height: 48px;
+  height: 80px;
   width: auto;
   display: block;
+  max-width: 220px;
+  object-fit: contain;
 }
 @media (max-width: 700px) {
   .logo-img {
-    height: 120px;
+    height: 60px;
+    max-width: 180px;
   }
 }
 
@@ -128,4 +132,47 @@ header {
     .hamburger {
         display: flex;
     }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 80px;
+    padding: 0 10px;
+  }
+  .logo-img {
+    height: 40px;
+    max-width: 120px;
+  }
+  .mobile-menu {
+    top: 60px;
+    padding: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .navbar {
+    height: 60px;
+    padding: 0 4px;
+  }
+  .logo-img {
+    height: 28px;
+    max-width: 80px;
+  }
+  .mobile-menu {
+    top: 48px;
+    padding: 0.5rem;
+  }
+  .hamburger {
+    width: 20px;
+    height: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .navbar {
+    height: 48px;
+    padding: 0 2px;
+  }
+  .logo-img {
+    height: 20px;
+    max-width: 60px;
+  }
 }

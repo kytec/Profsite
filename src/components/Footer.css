@@ -1,13 +1,218 @@
-footer {
-    background:#95c0f1;
-    color: #000000;
-    text-align: center;
-    padding: 1.2rem 0;
-    margin-top: 2rem;
+.footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem 0 2rem 0;
+  position: relative;
+  margin-top: 4rem;
+  color: white;
 }
-.container {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+}
+
+.company-name,
+.useful-links-title,
+.useful-links,
+.address p,
+.contact-info p,
+.copyright {
+  color: #fff !important;
+}
+
+.company-name {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.company-name,
+.useful-links-title {
+  color: #fff !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #fff !important;
+  background-clip: initial !important;
+}
+
+.address p, .contact-info p {
+  color: #444;
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.contact-info strong,
+.contact-info a {
+  color: #fff !important;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: #f4f4f4;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #e3f0fc;
+  color: #1976d2;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.1);
+}
+
+.useful-links-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.useful-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.useful-links li {
+  margin-bottom: 0.8rem;
+}
+
+.useful-links a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.useful-links a:hover {
+  color: #e3f0fc !important;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: left;
+}
+
+.footer-divider {
+  height: 1px;
+  background: #ddd;
+  margin-bottom: 1.5rem;
+}
+
+.copyright {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.designed-by {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.designer-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.designer-link:hover {
+  text-decoration: underline;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(25, 118, 210, 0.4);
+}
+
+.footer-content, .footer-top, .footer-section, .company-name, .address, .contact-info, .useful-links-title, .useful-links, .copyright, .designed-by {
+  text-align: left !important;
+}
+
+.footer-bottom {
+  text-align: left !important;
+}
+
+.footer-section:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-section:last-child {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 2rem;
+  }
+  .footer-section:last-child {
+    margin-left: 0;
+  }
 } 

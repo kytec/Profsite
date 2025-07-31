@@ -10,7 +10,7 @@
 .stats-heading {
   font-size: 2.4rem;
   font-weight: 900;
-  color: #000000;
+  color: #18306b;
   margin-bottom: 0.5rem;
   text-align: center;
   letter-spacing: 1px;
@@ -18,36 +18,59 @@
 
 .stats-subtitle {
   text-align: center;
-  color: #000000;
+  color: #1976d2;
   font-size: 1.15rem;
   margin-bottom: 2.5rem;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.2rem;
+.products-tabs-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-.stat {
+.products-tabs {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.products-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.product-tab {
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
   padding: 2.5rem 1.5rem 2rem 1.5rem;
-  min-height: 210px;
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   text-align: center;
-  transition: transform 0.22s, box-shadow 0.22s;
+  transition: all 0.3s ease;
   position: relative;
+  min-height: 280px;
 }
 
-.stat-icon {
+.product-tab:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+}
+
+.product-tab.expanded {
+  min-height: 400px;
+}
+
+.product-icon {
   width: 56px;
   height: 56px;
   background: #e3f0fc;
@@ -62,39 +85,117 @@
   border: 3px solid #c6e0fa;
 }
 
-.stat-number {
+.product-name {
   font-size: 1.25rem;
   font-weight: 800;
   color: #18306b;
-  margin-bottom: 0.5rem;
-  word-break: break-word;
+  margin-bottom: 0.8rem;
   line-height: 1.3;
 }
 
-.stat-label {
-  color: #1976d2;
-  font-size: 1.1rem;
+.product-short-desc {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.product-full-desc {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.product-full-desc p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.learn-more-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
 }
 
-.stat:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+.learn-more-btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
 }
 
-@media (max-width: 900px) {
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media (max-width: 600px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+
+/* Show only 3 tabs on desktop, allow scrolling for more */
+@media (min-width: 1024px) {
+  .products-tabs {
+    justify-content: flex-start;
   }
-  .stat {
-    min-height: 160px;
-    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+  
+  .product-tab {
+    min-width: 300px;
+    max-width: 300px;
   }
+}
+
+@media (max-width: 1023px) {
+  .products-tabs {
+    justify-content: flex-start;
+  }
+  
+  .product-tab {
+    min-width: 280px;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-heading {
+    font-size: 2rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 1rem;
+  }
+  
+  .product-tab {
+    min-width: 260px;
+    max-width: 260px;
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  
+  .product-name {
+    font-size: 1.1rem;
+  }
+}
+
+/* Scroll indicator */
+.products-tabs-container::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(90deg, transparent, rgba(248, 252, 248, 0.9));
+  pointer-events: none;
+  z-index: 1;
 } 
