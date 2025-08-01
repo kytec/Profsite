@@ -5,7 +5,7 @@
     padding: 2rem 1.5rem;
     max-width: 350px;
     width: 100%;
-    margin-bottom: 2rem;
+    margin: 0 auto;
 }
 .contact-form label {
     display: block;
@@ -31,24 +31,12 @@
 .contact-section {
     background: #e3f0fc;
     padding: 3rem 0;
-}
-.contact-flex {
     display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.contact-info {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
-    padding: 2rem 1.5rem;
-    max-width: 350px;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 @media (max-width: 900px) {
-    .contact-flex {
-        flex-direction: column;
+    .contact-section {
         align-items: center;
     }
 } 

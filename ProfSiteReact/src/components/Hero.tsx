@@ -1,13 +1,18 @@
 import './Hero.css';
+import { useRevealOnScroll } from './useRevealOnScroll';
 
-const Hero = () => (
-  <section className="hero">
-    <div className="hero-content">
-      <h1>[Company Name]</h1>
-      <p>Your Trusted Partner in Investment Success</p>
-      <a href="#about" className="cta-btn">Learn More</a>
-    </div>
-  </section>
-);
+const Hero = () => {
+  const revealRef = useRevealOnScroll();
+  return (
+    <section className="hero reveal-on-scroll" id="hero" ref={revealRef}>
+      <div className="hero-bg-placeholder">{/* Place your background image here */}</div>
+      <div className="hero-overlay" />
+      <div className="hero-content">
+        <h1 className="hero-title">WELCOME</h1>
+        <h2 className="hero-subtitle">TO [YOUR INVESTMENT COMPANY NAME]</h2>
+      </div>
+    </section>
+  );
+};
 
 export default Hero; 
