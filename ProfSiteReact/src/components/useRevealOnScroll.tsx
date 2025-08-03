@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-export function useRevealOnScroll(threshold = 0.15) {
-  const ref = useRef(null);
+export function useRevealOnScroll(
+  threshold = 0.15,
+  // rootMargin: string = '100px 0px 0px 0px'
+) {
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const node = ref.current;
